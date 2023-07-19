@@ -1,7 +1,7 @@
 package ExceptionEx;
 
 
-/* When declaring multiple catch blocks order for catch is the most specific AE,AIOB to most general expection class*/
+/* When declaring multiple catch blocks order for catch is the most specific AE,AIOB(child) to most general expection(parent) class*/
 public class MultipleCatchEx1 {
     public static void main(String[] args) {
         int a[]=new int[5];
@@ -20,6 +20,8 @@ public class MultipleCatchEx1 {
             catch(ArrayIndexOutOfBoundsException a1){
                 System.out.println(a1.fillInStackTrace());
                 a[0]=12;
+                String s=null;
+                System.out.println(s.length());  //nullpointer exception
             }
         }
         catch(ArrayIndexOutOfBoundsException A){
@@ -29,6 +31,7 @@ public class MultipleCatchEx1 {
             System.out.println(N.fillInStackTrace());
         }
         //this is just like for default handling for other than these exceptions
+        //here there is no nullpointer ex catch block so parent Exception will catch that ex
         catch(Exception e){
             System.out.println(e);
         }
