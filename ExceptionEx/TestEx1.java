@@ -16,3 +16,4 @@ public class TestEx1 {
         System.out.println("All the statements after the exception got ignored in try block");
     }
 }
+
